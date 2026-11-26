@@ -1,1 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Can Trailing Search Trajectories and Query-Mix Signals Predict Content Decay Across Unseen Domains?</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --surface: #f8fafc;
+      --border: #e2e8f0;
+      --text: #0f172a;
+      --muted: #475569;
+      --accent: #1d4ed8;
+      --accent-soft: #eff6ff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.65;
+      font-size: 16px;
+    }
+    main {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 2.25rem 1.25rem 4rem;
+    }
+    header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .kicker {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    h1 {
+      font-size: clamp(1.65rem, 3.5vw, 2.25rem);
+      line-height: 1.22;
+      margin: 0 0 0.75rem;
+      letter-spacing: -0.02em;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    .abstract-box {
+      background: var(--accent-soft);
+      border-left: 4px solid var(--accent);
+      padding: 1.25rem 1.35rem;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 2.25rem;
+    }
+    .abstract-box h2 {
+      margin: 0 0 0.5rem;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent);
+      border: none;
+      padding: 0;
+    }
+    .abstract-box p {
+      margin: 0;
+      font-size: 0.98rem;
+    }
+    h2 {
+      font-size: 1.35rem;
+      margin: 2.4rem 0 0.75rem;
+      padding-bottom: 0.35rem;
+      border-bottom: 1px solid var(--border);
+      letter-spacing: -0.01em;
+    }
+    p {
+      margin: 0 0 1rem;
+    }
+    ul, ol {
+      margin: 0 0 1.25rem;
+      padding-left: 1.35rem;
+    }
+    li {
+      margin-bottom: 0.5rem;
+    }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.88em;
+      background: var(--surface);
+      padding: 0.15rem 0.35rem;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+    }
+    .table-wrap {
+      overflow-x: auto;
+      margin: 1.25rem 0 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+      text-align: left;
+    }
+    th, td {
+      padding: 0.7rem 0.85rem;
+      border-bottom: 1px solid var(--border);
+    }
+    th {
+      background: var(--surface);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    tr:last-child td { border-bottom: none; }
+    .num { text-align: right; font-variant-numeric: tabular-nums; }
+    figure {
+      margin: 1.75rem 0;
+      padding: 1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+    figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+      background: #ffffff;
+    }
+    figcaption {
+      margin-top: 0.75rem;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+    figcaption strong {
+      color: var(--text);
+    }
+    .callout {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem 1.2rem;
+      margin: 1.25rem 0;
+    }
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+<main>
 
+  <header>
+    <div class="kicker">Applied Search Intelligence &middot; Empirical ML Study</div>
+    <h1>Can Trailing Search Trajectories and Query-Mix Signals Predict Content Decay Across Unseen Domains?</h1>
+    <div class="meta">Rishabh Brahmane &middot; November 2026 &middot; Public-Safe Warehouse Evaluation</div>
+  </header>
+
+  <!-- 1. TITLE + ABSTRACT (5 sentences: question -> data -> method -> headline result -> what it's for) -->
+  <section class="abstract-box" aria-label="Abstract">
+    <h2>Abstract</h2>
+    <p>
+      This study investigates whether trailing search impression trajectories and 90-day query-mix concentration metrics can predict if an active web page will suffer a greater than 20% month-over-month drop in search impressions across unseen client domains.
+      We analyzed <code>84,444</code> active content items (filtered from <code>519,606</code> cataloged URLs and <code>78.8M</code> daily performance rows) across <code>104</code> pseudonymized clients in the FlyRank internship warehouse release.
+      Using DuckDB SQL aggregations and a 200-tree Random Forest classifier trained on six pre-outcome features, we compared a standard stratified random split against a strict client-grouped split (<code>GroupShuffleSplit</code> on <code>client_hash_id</code>) to prevent domain-level leakage.
+      While random splitting produced <code>0.705</code> accuracy (vs. a <code>0.637</code> majority base rate), holding out entire client domains reduced accuracy to <code>0.661</code> (below the <code>0.686</code> unseen-client base rate), though the model maintained <code>0.762</code> precision and <code>0.614</code> macro F1 compared to <code>0.407</code> for the majority baseline.
+      Consequently, these signals are best deployed as a calibrated risk-ranking score to prioritize high-traffic pages for editorial refresh audits rather than as a standalone automated trigger.
+    </p>
+  </section>
+
+  <!-- 2. INTRODUCTION / PROBLEM -->
+  <h2>1. Introduction &amp; Decision Context</h2>
+  <p>
+    An SEO content strategist managing a portfolio of 10,000 published articles cannot manually audit every URL each month. By the time a monthly analytics report flags a sharp drop in organic visibility, rankings have often already eroded and recovery requires substantial editorial effort.
+  </p>
+  <p>
+    The obvious rule—flagging every page whose impressions dipped slightly last week—creates alert fatigue because normal search demand fluctuates daily. This work tests whether combining two months of prior impression volume with query-level concentration metrics (such as reliance on a single head query versus a broad query tail) provides an early-warning signal that holds up on brand-new client websites.
+  </p>
+
+  <!-- 3. DATA -->
+  <h2>2. Data &amp; Cohort Construction</h2>
+  <p>
+    All experiments were executed directly against the pseudonymized <code>FlyRank/internship-warehouse</code> Parquet release using DuckDB, querying column partitions remotely without downloading the full multi-gigabyte warehouse. Every entity is represented solely by cryptographic hashes (<code>client_hash_id</code> and <code>content_hash_id</code>), with zero domain names, client identities, or raw search query strings exposed.
+  </p>
+  <ul>
+    <li><strong><code>dim_clients</code> (<code>104</code> clients):</strong> An unbalanced panel spanning <code>2025-01-27</code> to <code>2026-06-02</code>, where onboarding depth varies substantially across accounts (only <code>4</code> clients carry 12 or more months of continuous Google Search Console history).</li>
+    <li><strong><code>dim_content</code> (<code>519,606</code> content items):</strong> The full catalog of tracked content URLs mapped to their parent client hashes.</li>
+    <li><strong><code>fact_content_daily_performance</code> (<code>78,835,655</code> rows):</strong> Daily search impressions, clicks, and average ranking position aggregated into three non-overlapping 30-day buckets across the trailing 90 days (<code>imp_prev60</code>, <code>imp_prev30</code>, and <code>imp_last30</code>).</li>
+    <li><strong><code>fact_content_query_90d</code> (<code>2,414,248</code> rows):</strong> Page-level query diversity and concentration summaries over the 90-day window.</li>
+  </ul>
+  <p>
+    <strong>Exclusions &amp; Volume Floor:</strong> To prevent minor daily noise on near-dormant pages from registering as false 20% declines, we required each page to record at least <code>200</code> impressions in the baseline window (<code>imp_prev30 &ge; 200</code>). This floor narrowed the catalog from <code>519,606</code> items to <code>88,301</code> active pages, and joining complete query-mix records yielded <code>84,444</code> modeled content items.
+  </p>
+
+  <!-- 4. METHODOLOGY -->
+  <h2>3. Methodology &amp; Validation Design</h2>
+  <p>
+    <strong>Target Label:</strong> A content item is labeled as declining (<code>is_declining = 1</code>) when impressions in the final 30-day window drop by more than 20% relative to the prior 30 days (<code>imp_last30 &lt; 0.80 &times; imp_prev30</code>), and stable or growing (<code>0</code>) otherwise. Across the modeled cohort, roughly two-thirds of active pages experienced a &gt;20% month-over-month contraction during the observed window.
+  </p>
+  <p>
+    <strong>Features (6 Inputs):</strong> We excluded all same-window outcome metrics (<code>imp_last30</code>, <code>clk_last30</code>, <code>pos_last30</code>) and trained a 200-tree <code>RandomForestClassifier</code> (<code>random_state=42</code>) on six signals:
+  </p>
+  <ul>
+    <li><strong>Impression Trajectory:</strong> <code>imp_prev30</code> (impressions 31–60 days prior) and <code>imp_prev60</code> (impressions 61–90 days prior).</li>
+    <li><strong>Query Breadth &amp; Concentration:</strong> <code>visible_queries</code> (distinct non-anonymized queries), <code>rare_share</code> (impression share from low-volume queries), <code>anon_share</code> (impression share from Google-anonymized queries), and <code>top_query_share</code> (ratio of top-query impressions to kept query impressions).</li>
+  </ul>
+  <p>
+    <strong>Leakage Checks &amp; Split Comparison:</strong> Pages within the same website share domain-level algorithm shocks and seasonality. To test whether the model learns generalizable decay patterns rather than memorizing client-specific baselines, we evaluated identical models on a 75/25 <strong>Stratified Random Split</strong> (<code>21,111</code> test rows) and a 75/25 <strong>Client-Grouped Split</strong> (<code>GroupShuffleSplit</code> on <code>client_hash_id</code>; <code>42,874</code> test rows across held-out clients with zero domain overlap), comparing both against a majority-class dummy baseline.
+  </p>
+
+  <!-- 5. RESULTS -->
+  <h2>4. Results (Model vs. Baseline)</h2>
+  <p>
+    Evaluating on unseen client domains exposes a clear generalization gap: random row splitting overstates overall accuracy by <code>4.4</code> percentage points (<code>0.705</code> vs. <code>0.661</code>) compared to a strict client-grouped split. On unseen clients, the Random Forest trails the majority-class dummy baseline in raw accuracy (<code>0.661</code> vs. <code>0.686</code> base rate) because predicting every page as declining exploits the high base rate, yet the Random Forest delivers substantially stronger class balance (<code>0.614</code> vs. <code>0.407</code> macro F1) and higher precision (<code>0.762</code> vs. <code>0.686</code>).
+  </p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Validation Split</th>
+          <th>Model</th>
+          <th class="num">Accuracy</th>
+          <th class="num">Macro F1</th>
+          <th class="num">Precision (1)</th>
+          <th class="num">Recall (1)</th>
+          <th class="num">F1 (1)</th>
+          <th class="num">Test Rows</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Stratified Random Split</td>
+          <td>Dummy Majority Baseline (<code>1</code>)</td>
+          <td class="num">0.637</td>
+          <td class="num">0.389</td>
+          <td class="num">0.637</td>
+          <td class="num">1.000</td>
+          <td class="num">0.778</td>
+          <td class="num">21,111</td>
+        </tr>
+        <tr>
+          <td>Stratified Random Split</td>
+          <td>Random Forest (6 features)</td>
+          <td class="num"><strong>0.705</strong></td>
+          <td class="num"><strong>0.643</strong></td>
+          <td class="num"><strong>0.719</strong></td>
+          <td class="num">0.880</td>
+          <td class="num"><strong>0.792</strong></td>
+          <td class="num">21,111</td>
+        </tr>
+        <tr>
+          <td>Client-Grouped Split (<code>GroupShuffleSplit</code>)</td>
+          <td>Dummy Majority Baseline (<code>1</code>)</td>
+          <td class="num"><strong>0.686</strong></td>
+          <td class="num">0.407</td>
+          <td class="num">0.686</td>
+          <td class="num">1.000</td>
+          <td class="num"><strong>0.814</strong></td>
+          <td class="num">42,874</td>
+        </tr>
+        <tr>
+          <td>Client-Grouped Split (<code>GroupShuffleSplit</code>)</td>
+          <td>Random Forest (6 features)</td>
+          <td class="num">0.661</td>
+          <td class="num"><strong>0.614</strong></td>
+          <td class="num"><strong>0.762</strong></td>
+          <td class="num">0.736</td>
+          <td class="num">0.749</td>
+          <td class="num">42,874</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <figure>
+    <img src="img/fig1_split_comparison.png" alt="Bar chart comparing Accuracy, Macro F1, and Decline Precision between Dummy Baseline and Random Forest across Random and Client-Grouped splits." />
+    <figcaption>
+      <strong>Figure 1 — Generalization Gap Across Validation Splits:</strong> Random splitting lifts accuracy from 0.637 to 0.705, whereas holding out unseen clients via <code>GroupShuffleSplit</code> drops accuracy to 0.661 while preserving a 0.762 precision advantage over the 0.686 base rate.
+    </figcaption>
+  </figure>
+
+  <figure>
+    <img src="img/fig2_feature_importance.png" alt="Horizontal bar chart ranking Gini feature importances in the client-grouped Random Forest model." />
+    <figcaption>
+      <strong>Figure 2 — Feature Importance in the Unseen-Client Model:</strong> Trailing impression volumes (<code>imp_prev30</code>, <code>imp_prev60</code>) and query concentration metrics (<code>top_query_share</code>, <code>anon_share</code>, <code>rare_share</code>) jointly drive risk scoring across held-out domains.
+    </figcaption>
+  </figure>
+
+  <figure>
+    <img src="img/fig3_risk_stratification.png" alt="Bar chart showing observed decline rates across predicted risk quartiles Q1 to Q4 on unseen clients." />
+    <figcaption>
+      <strong>Figure 3 — Risk Quartile Stratification on Unseen Clients:</strong> Sorting held-out test pages by predicted decline probability separates lower-risk pages (Q1) from high-risk pages (Q4), concentrating true &gt;20% decay cases well above the 0.686 cohort base rate.
+    </figcaption>
+  </figure>
+
+  <!-- 6. LIMITATIONS & HONEST FRAMING -->
+  <h2>5. Limitations &amp; Honest Framing</h2>
+  <p>
+    These findings support directional editorial prioritization but cannot be treated as causal proof or deployed as an autonomous decision rule due to four constraints:
+  </p>
+  <ul>
+    <li><strong>90-Day Query-Table Window Overlap:</strong> <code>fact_content_query_90d</code> is a pre-aggregated trailing 90-day snapshot spanning both the historical baseline and the final 30-day outcome period. Consequently, query-mix features carry partial temporal overlap with the target window rather than strict point-in-time separation.</li>
+    <li><strong>Cross-Domain Accuracy Ceiling &amp; Unbalanced Panel:</strong> On unseen domains, overall accuracy (<code>0.661</code>) sits below the majority-class base rate (<code>0.686</code>). Because only <code>4</code> of <code>104</code> clients have 12+ months of search history, annual seasonal contractions cannot be distinguished from structural content decay.</li>
+    <li><strong>Observational Signal Only:</strong> A measured &gt;20% drop in impressions reflects visibility contraction, not its root cause (such as search engine core updates, competitor entrants, intentional URL pruning, or macro demand shifts).</li>
+    <li><strong>Impressions-Only Scope:</strong> Excluding pages below <code>200</code> prior-30d impressions omits <code>431,305</code> long-tail URLs, and the target measures impression volume rather than clicks, leads, or revenue.</li>
+  </ul>
+
+  <!-- 7. RANKED RECOMMENDATIONS -->
+  <h2>6. Ranked Recommendations</h2>
+  <ol>
+    <li><strong>Use Predicted Probabilities for Ranked Triage, Not Hard Thresholds:</strong> Sort active pages by predicted decline risk and focus human editorial audits on the top quartile (where precision reaches <code>0.762</code>) rather than triggering automated changes from binary class labels.</li>
+    <li><strong>Mandate Client-Grouped Splits (<code>GroupShuffleSplit</code>) in All Benchmarks:</strong> Never rely on random row splits for multi-client SEO panels; enforce domain-level grouping so evaluation metrics reflect true out-of-sample generalization.</li>
+    <li><strong>Replace Trailing 90-Day Query Snapshots with Strictly Lagged Daily Features:</strong> Engineer point-in-time features strictly from days <code>t-90</code> to <code>t-31</code> in <code>fact_content_daily_performance</code>—such as average position slope, click-through rate drift, and daily impression volatility—to remove target-window overlap.</li>
+    <li><strong>Prioritize by Expected Impressions at Risk:</strong> Multiply predicted decline probability by baseline volume (<code>p_decline &times; imp_prev30</code>) so content teams address high-traffic pages before spending effort on low-visibility URLs.</li>
+  </ol>
+
+  <!-- 8. REPRODUCIBILITY -->
+  <h2>7. Reproducibility</h2>
+  <div class="callout">
+    <p style="margin-bottom: 0.4rem;">
+      <strong>Code &amp; Notebooks:</strong> Full SQL queries, leakage assertions, model training, and chart generation scripts are published in
+      <a href="https://github.com/rish7186/flyrank-ml-internship-starter/blob/main/work/notebooks/capstone.ipynb" target="_blank" rel="noopener"><code>work/notebooks/capstone.ipynb</code></a>.
+    </p>
+    <p style="margin: 0;">
+      <strong>Rerun Instructions:</strong> Clone <a href="https://github.com/rish7186/flyrank-ml-internship-starter" target="_blank" rel="noopener"><code>rish7186/flyrank-ml-internship-starter</code></a>, set a read-only Hugging Face token (<code>HF_TOKEN</code>) after accepting the dataset terms, and execute <em>Runtime &rarr; Run all</em> with <code>RANDOM_SEED = 42</code> and <code>MIN_PREV30_IMPRESSIONS = 200</code>.
+    </p>
+  </div>
+
+  <!-- 9. ACKNOWLEDGMENTS & DATA CREDIT -->
+  <footer>
+    <strong>Acknowledgments &amp; Data Credit:</strong> Built using the pseudonymized search performance dataset released by
+    <a href="https://huggingface.co/datasets/FlyRank/internship-warehouse" target="_blank" rel="noopener">FlyRank (<code>FlyRank/internship-warehouse</code> on Hugging Face)</a> as part of the FlyRank Machine Learning Internship capstone.
+  </footer>
+
+</main>
+</body>
+</html>
